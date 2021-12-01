@@ -1,6 +1,9 @@
 import axios from 'axios';
 
-const API_ROOT = `${process.env.REACT_APP_API_ROOT || "http://localhost:3001"}`;
+// const localhost = "https://localhost:3001";
+const heroku = "https://simple-ecommerce-app-db.herokuapp.com/";
+
+const API_ROOT = `${process.env.REACT_APP_API_ROOT || heroku}`;
 
 const config = {
 
