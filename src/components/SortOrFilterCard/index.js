@@ -28,7 +28,7 @@ const SortOrFilterCard = ({ title, type, data, name, values, onChange, search }
 	}
 
 	const filteredData = useMemo(() => {
-		return data.filter(item => !item.text.toLocaleLowerCase().search(new RegExp(searchVal.toLocaleLowerCase(), 'g')))
+		return data.filter(item => !(item.text || "").toLocaleLowerCase().search(new RegExp(searchVal.toLocaleLowerCase(), 'g')))
 	}, [ data, searchVal ]);
 
 	if (!data || data.length === 0) {
