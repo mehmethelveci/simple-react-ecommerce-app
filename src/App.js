@@ -1,24 +1,21 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import { Provider } from 'react-redux';
+import { ThemeProvider } from "styled-components";
+import { Normalize } from "styled-normalize";
+import Layout from "./Layout";
+import { store } from "./store";
+import theme from "./theme/defaultTheme";
+import GlobalStyle from "./theme/global";
 
-function App() {
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Provider store={store}>
+      <ThemeProvider theme={theme}>
+        <Normalize />
+        <GlobalStyle />
+        <Layout />
+      </ThemeProvider>
+    </Provider>
   );
 }
 
