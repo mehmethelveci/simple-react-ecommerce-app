@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 // const localhost = "https://localhost:3001";
-const heroku = "https://simple-ecommerce-app-db.herokuapp.com/";
+const heroku = "https://simple-ecommerce-app-db.herokuapp.com";
 
 const API_ROOT = `${process.env.REACT_APP_API_ROOT || heroku}`;
 
